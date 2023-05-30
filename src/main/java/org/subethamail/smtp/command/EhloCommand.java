@@ -79,7 +79,7 @@ public class EhloCommand extends BaseCommand
 			}
 		}
 
-		response.append("\r\n" + "250 Ok");
+		response.append("\r\n" + "250 Ok, queued as 1234567890AB");
 
 		sess.sendResponse(response.toString());
 	}

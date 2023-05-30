@@ -24,6 +24,6 @@ public class ResetCommand extends BaseCommand
 	{
 		sess.resetMailTransaction();
 
-		sess.sendResponse("250 Ok");
+		sess.sendResponse("250 Ok, queued as 1234567890AB");
 	}
 }

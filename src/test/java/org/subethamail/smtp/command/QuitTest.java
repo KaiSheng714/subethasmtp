@@ -22,7 +22,7 @@ public class QuitTest extends ServerTestCase
 		this.expect("250");
 
 		this.send("MAIL FROM: test@example.com");
-		this.expect("250 Ok");
+		this.expect("250 Ok, queued as 1234567890AB");
 
 		this.send("QUIT");
 		this.expect("221 Bye");

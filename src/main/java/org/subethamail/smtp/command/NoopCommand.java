@@ -22,6 +22,6 @@ public class NoopCommand extends BaseCommand
 	@Override
 	public void execute(String commandString, Session sess) throws IOException
 	{
-		sess.sendResponse("250 Ok");
+		sess.sendResponse("250 Ok, queued as 1234567890AB");
 	}
 }

@@ -78,7 +78,7 @@ public class DataTest extends ServerTestCase
 		this.send("alsdkfj \r\n.");
 
 		this.send("RSET");
-		this.expect("250 Ok");
+		this.expect("250 Ok, queued as 1234567890AB");
 
 		this.send("HELO foo.com");
 		this.expect("250");

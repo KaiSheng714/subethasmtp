@@ -31,7 +31,7 @@ public class MailTest extends ServerTestCase
 		this.expect("250");
 
 		this.send("MAIL FROM: test@example.com");
-		this.expect("250 Ok");
+		this.expect("250 Ok, queued as 1234567890AB");
 
 		this.send("MAIL FROM: another@example.com");
 		this.expect("503 5.5.1 Sender already specified.");
@@ -96,7 +96,7 @@ public class MailTest extends ServerTestCase
 		this.expect("250");
 
 		this.send("MAIL FROM:<validuser@subethamail.org>");
-		this.expect("250 Ok");
+		this.expect("250 Ok, queued as 1234567890AB");
 	}
 	
 	/** */
@@ -109,7 +109,7 @@ public class MailTest extends ServerTestCase
 	    this.expectContains("250-SIZE 1000");
 
 	    this.send("MAIL FROM:<validuser@subethamail.org> SIZE=100");
-	    this.expect("250 Ok");
+	    this.expect("250 Ok, queued as 1234567890AB");
 	}
 
 	/** */
@@ -122,7 +122,7 @@ public class MailTest extends ServerTestCase
 	    this.expectContains("250-SIZE 1000");
 
 	    this.send("MAIL FROM:<validuser@subethamail.org>");
-	    this.expect("250 Ok");
+	    this.expect("250 Ok, queued as 1234567890AB");
 	}
 
 	/** */

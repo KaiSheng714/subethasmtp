@@ -56,7 +56,7 @@ public class ReceiptCommand extends BaseCommand
 			{
 				sess.getMessageHandler().recipient(recipientAddress);
 				sess.addRecipient(recipientAddress);
-				sess.sendResponse("250 Ok");
+				sess.sendResponse("250 Ok, queued as 1234567890AB");
 			}
 			catch (DropConnectionException ex)
 			{

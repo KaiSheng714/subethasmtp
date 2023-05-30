@@ -34,7 +34,7 @@ public class ReceiptTest extends ServerTestCase
 		this.expect("250");
 
 		this.send("MAIL FROM: success@subethamail.org");
-		this.expect("250 Ok");
+		this.expect("250 Ok, queued as 1234567890AB");
 
 		this.send("RCPT");
 		this.expect("501 Syntax: RCPT TO: <address>  Error in parameters:");
@@ -49,13 +49,13 @@ public class ReceiptTest extends ServerTestCase
 		this.expect("250");
 
 		this.send("MAIL FROM: success@subethamail.org");
-		this.expect("250 Ok");
+		this.expect("250 Ok, queued as 1234567890AB");
 
 		this.send("RCPT TO: failure@subethamail.org");
 		this.expect("553 <failure@subethamail.org> address unknown.");
 
 		this.send("RCPT TO: success@subethamail.org");
-		this.expect("250 Ok");
+		this.expect("250 Ok, queued as 1234567890AB");
 	}
 
 	/** */
@@ -67,9 +67,9 @@ public class ReceiptTest extends ServerTestCase
 		this.expect("250");
 
 		this.send("MAIL FROM: success@subethamail.org");
-		this.expect("250 Ok");
+		this.expect("250 Ok, queued as 1234567890AB");
 
 		this.send("RCPT TO:success@subethamail.org");
-		this.expect("250 Ok");
+		this.expect("250 Ok, queued as 1234567890AB");
 	}
 }
